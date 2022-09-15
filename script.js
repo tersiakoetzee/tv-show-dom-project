@@ -4,7 +4,13 @@ const searchCount = document.getElementById("episodeCount");
 
 
 //You can edit ALL of the code here
-// 
+function setup() {
+  sendRequest(82).then((data) => {
+    currentEpisodes = data;
+    makePageForEpisodes(currentEpisodes);
+  });
+  searchBox.addEventListener("keyup", filterEpisodes);
+}
 // 
 
 // making elements for images.
@@ -66,10 +72,26 @@ function filterEpisodes(event) {
   makePageForEpisodes(filteredEpisodes);
 }
 
+// filtering episode numbers.
+function onChange(event) {
+  const episodeId = event.target.value;
+    const filteredEpisodes = currentEpisodes.filter((e) => {
+      return e.id === Number(episodeId);
+    });
+    makePageForEpisodes(filteredEpisodes);
+  }
 
 
+function sendRequest(showId) {
+  const urlForTheRequest = `https://api.tvmaze.com/shows/${showId}/episodes`;
 
-
+  return fetch(urlForTheRequest)
+    .then((res) => res.json())
+    .then((data) => {
+      return data;
+    })
+    .catch((e) => console.log(e));
+}
 
 window.onload = setup;
 
