@@ -1,42 +1,54 @@
-/* #root {
+body{
+  background-color: rgb(148, 158, 161);
+}
+
+
+#episodeContainer {
   position: relative;
   gap: 25px;
   grid-template-rows: 1fr;
   padding: 10px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-  background-color: lightgray;
+  
 
 
 }
+.searchContainer{
+  position: relative;
+    gap: 25px;
+    grid-template-rows: 1fr;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+}
 
-.title {
-  border: 1px solid black;
+#title {
+  border: 2px solid black;
   border-radius: 5px;
   padding: 30px;
 }
 
-.episode {
+#episode {
+  text-align: center;
   background-color: white;
   border-radius: 15px;
-  padding: 10px;
-  border-style: none;
-  box-shadow: 0 20px 20px -15px rgba(252, 251, 253, 0.906)
+  padding: 20px;
+  box-shadow: 0 20px 20px -15px rgba(3, 155, 250, 0.906)
 }
 
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  border: 2px solid rgb(69, 68, 68);
+  border-radius: 5px;
 }
 
-.summary {
+p {
   text-align: center;
-  margin-left: 60px;
-  margin-right: 90px;
-  padding-bottom: 5px;
-  font-size: large;
+ padding: auto;
 }
 a{
   color: black;
-} */
+}
